@@ -146,16 +146,6 @@
 	M.say_wrapper()
 	return TRUE
 
-/datum/keybinding/mob/subtle
-	hotkey_keys = list("6")
-	name = "subtle"
-	full_name = "Subtle"
-	description = "Does a subtle emote."
-
-/datum/keybinding/mob/subtle/down(client/user)
-	user.mob.subtle_wrapper()
-	return TRUE
-
 /datum/keybinding/mob/me
 	name = "me"
 	full_name = "Me"
@@ -163,7 +153,6 @@
 	classic_keys = list("M")
 	description = ""
 	keybind_signal = COMSIG_KB_MOB_ME_DOWN
-
 /datum/keybinding/mob/me/down(client/user)
 	. = ..()
 	if(.)

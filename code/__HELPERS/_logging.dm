@@ -158,12 +158,14 @@
 		WRITE_LOG(GLOB.world_game_log, "EMOTE: [text]")
 
 /proc/log_subtle(text, mob/speaker)
+	LAZYADD(GLOB.say_log, "\[[stationTimestamp()]\] SUBTLE: [text]")
 	if(CONFIG_GET(flag/log_emote))
-		WRITE_LOG(GLOB.world_game_log, "SUBTLE: [speaker.simple_info_line()]: [html_decode(text)]")
+		WRITE_LOG(GLOB.world_game_log, "SUBTLE: [text]")
 
 /proc/log_subtle_anti_ghost(text, mob/speaker)
+	LAZYADD(GLOB.say_log, "\[[stationTimestamp()]\] SUBTLER: [text]")
 	if(CONFIG_GET(flag/log_emote))
-		WRITE_LOG(GLOB.world_game_log, "SUBTLER: [speaker.simple_info_line()]: [html_decode(text)]")
+		WRITE_LOG(GLOB.world_game_log, "SUBTLER: [text]")
 
 
 /proc/log_prayer(text)
