@@ -157,6 +157,14 @@
 	if(CONFIG_GET(flag/log_emote))
 		WRITE_LOG(GLOB.world_game_log, "EMOTE: [text]")
 
+/proc/log_subtle(text, mob/speaker)
+	if(CONFIG_GET(flag/log_emote))
+		WRITE_LOG(GLOB.world_game_log, "SUBTLE: [speaker.simple_info_line()]: [html_decode(text)]")
+
+/proc/log_subtle_anti_ghost(text, mob/speaker)
+	if(CONFIG_GET(flag/log_emote))
+		WRITE_LOG(GLOB.world_game_log, "SUBTLER: [speaker.simple_info_line()]: [html_decode(text)]")
+
 
 /proc/log_prayer(text)
 	LAZYADD(GLOB.game_log, "\[[stationTimestamp()]\] PRAY: [text]")

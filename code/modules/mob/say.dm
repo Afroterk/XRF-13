@@ -83,6 +83,10 @@
 		var/key_symbol = lowertext(message[length(key) + 1])
 		return GLOB.department_radio_keys[key_symbol]
 
+/mob/proc/subtle_wrapper()
+	var/message = input("","subtle (text)") as message|null
+	if(message)
+		me_verb_subtle(message)
 
 ///Check if this message is an emote
 /mob/proc/check_emote(message)
